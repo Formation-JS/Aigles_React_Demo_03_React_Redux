@@ -5,18 +5,28 @@ type ProductFormProps = {
   onProductValided?: (data: ProductFormData) => void
 };
 
+type ProductInnerForm = {
+  name: string;
+  price: string;
+  quantity: string;
+}
+
 export default function ProductForm({ 
   onProductValided = () => {}
 }: ProductFormProps) {
 
-  const { register, handleSubmit, reset } = useForm<ProductFormData>({
+  const { register, handleSubmit, reset } = useForm<ProductInnerForm>({
     defaultValues: {
-      name: '', quantity: 0, price: 0
+      name: '', quantity: '', price: ''
     }
   });
 
-  const handleProductSubmit = (data: ProductFormData) => {
-    onProductValided(data);
+  const handleProductSubmit = (data: ProductInnerForm) => {
+    onProductValided({
+      name: data.name,
+      price: parseFloat(data.price),
+      quantity: parseInt(data.quantity)
+    });
     reset();
   }
 
@@ -32,7 +42,7 @@ export default function ProductForm({
       </div>
       <div>
         <label>Price : </label>
-        <input type="number" {...register('price', { min: 1, required: true })} />
+        <input type="number" step={0.01} {...register('price', { min: 1, required: true })} />
       </div>
       <div>
         <button type="submit">Valider</button>
