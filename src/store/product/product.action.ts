@@ -2,6 +2,7 @@
 
 import { createAction } from '@reduxjs/toolkit';
 import { Product, ProductFormData } from '../../@types/product';
+import * as uuid from 'uuid';
 
 // - Ajouter un produit
 export const productAdd = createAction('product/add', (product: ProductFormData) => {
@@ -9,7 +10,7 @@ export const productAdd = createAction('product/add', (product: ProductFormData)
   // Création de l'objet "Payload"
   const payload: Product = {
     ...product,
-    id: '42',
+    id: uuid.v4(),
     createAt: new Date().toISOString(),
     updateAt: new Date().toISOString(),
     isActive: true
