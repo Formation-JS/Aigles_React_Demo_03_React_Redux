@@ -1,6 +1,6 @@
 import './App.css'
-import ProductForm from './components/ProductForm/ProductForm';
 import Header from './containers/Header/Header';
+import ProductAddForm from './features/Product/ProductAddForm';
 
 function App() {
 
@@ -9,7 +9,8 @@ function App() {
       <Header />
       <main>
         La démo sera ici o_O
-        <ProductForm />
+        
+        <ProductAddForm />
       </main>
     </>
   )
