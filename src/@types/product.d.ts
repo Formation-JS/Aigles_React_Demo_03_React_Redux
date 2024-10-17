@@ -8,4 +8,4 @@ export type Product = {
   updateAt: string;
 }
 
-export type ProductForm = Omit<Product, 'id' | 'isActive' | 'createAt' | 'updateAt'>;
+export type ProductFormData = Omit<Product, 'id' | 'isActive' | 'createAt' | 'updateAt'>;

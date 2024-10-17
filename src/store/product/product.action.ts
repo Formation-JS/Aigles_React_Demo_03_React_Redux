@@ -1,10 +1,10 @@
 //! Action creator -> Fonction pour créer l'objet "action"
 
 import { createAction } from '@reduxjs/toolkit';
-import { Product, ProductForm } from '../../@types/product';
+import { Product, ProductFormData } from '../../@types/product';
 
 // - Ajouter un produit
-export const productAdd = createAction('product/add', (product: ProductForm) => {
+export const productAdd = createAction('product/add', (product: ProductFormData) => {
 
   // Création de l'objet "Payload"
   const payload: Product = {
