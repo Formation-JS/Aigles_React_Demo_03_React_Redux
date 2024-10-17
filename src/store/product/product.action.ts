@@ -27,7 +27,7 @@ type ProductActionQuantity = {
   move: 'up' | 'down';
   quantity: number;
 };
-export const productUdateQuantity = createAction('product/update-quantity', (data: ProductActionQuantity) => {
+export const productUpdateQuantity = createAction('product/update-quantity', (data: ProductActionQuantity) => {
   // Ajout de la date d'update dans le payload
   return {
     payload: {
