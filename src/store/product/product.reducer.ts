@@ -72,6 +72,10 @@ const productReducer = createReducer(initialState, (builder) => {
       if(product) {
         product.quantity = (move === 'up') ? product.quantity + quantity : product.quantity - quantity;
         product.updateAt = updateAt;
+
+        if(product.quantity <= 0) {
+          state.products = state.products.filter(p => p.id !== id);
+        }
       }
     })
     .addCase(productDispo, (state, action) => {
