@@ -17,3 +17,8 @@ Gestion de stock
 - Modifier le prix d'un produit
 - Changer la disponibilité d'un produit
 - Vider le stock
+
+## Mise en place de redux
+- Définir les actions du store
+- Créer le reducer pour résoudre les actions
+- Configuration de redux
